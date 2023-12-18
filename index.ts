@@ -37,6 +37,7 @@ const scanImage = async (imageUri: string) => {
       ],
     });
     console.log(chatCompletion.usage);
+
     return chatCompletion.choices[0].message;
   } catch (err) {
     if (err instanceof OpenAI.APIError) {
@@ -51,7 +52,7 @@ const scanImage = async (imageUri: string) => {
 
 async function main() {
   const response = await scanImage(
-    "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Gfp-wisconsin-madison-the-nature-boardwalk.jpg/2560px-Gfp-wisconsin-madison-the-nature-boardwalk.jpg"
+    "https://threedtreasury-nsfw-resin-miniatures.com/cdn/shop/products/nsfw-mary-jane-resin-figure-by-ca-3d-art-462931.jpg?v=1695832595"
   );
   console.log({ response });
 }
